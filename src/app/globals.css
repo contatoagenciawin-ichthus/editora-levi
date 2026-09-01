@@ -123,14 +123,68 @@ blockquote { margin: 42px 0 0; padding: 28px 0 0 28px; border-left: 3px solid va
 .featured small { color: rgba(245,240,231,.45); }
 .purchase-card button:disabled { opacity: .65; cursor: default; transform: none; }
 
+.order-band { background: #0f171f; color: var(--paper); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+.order-band-grid { min-height: 220px; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; padding: 54px 0; }
+.order-band h2 { margin: 0 0 12px; font-size: clamp(34px, 4vw, 52px); line-height: 1.04; }
+.order-band p { max-width: 720px; margin: 0; color: rgba(245,240,231,.58); line-height: 1.7; }
+
+.questions-section { background: #f4eee5; }
+.questions-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: start; }
+.questions-grid h2, .practical-section h2, .cury-section h2, .faq-section h2, .lp-closing h2 { font-size: clamp(40px, 5vw, 66px); line-height: 1.03; letter-spacing: -.035em; margin-bottom: 0; }
+.question-list { border-top: 1px solid rgba(11,17,23,.16); }
+.question-list p { margin: 0; padding: 24px 0; border-bottom: 1px solid rgba(11,17,23,.16); font-family: Georgia, 'Times New Roman', serif; font-size: 25px; line-height: 1.36; }
+.quote-note { margin-top: 28px; color: var(--gold-light) !important; font-family: Georgia, 'Times New Roman', serif; font-size: 21px !important; }
+
+.practical-section { background: #efe6d7; }
+.practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: start; }
+.practical-grid > div > p { margin-top: 28px; color: #50565b; font-size: 17px; line-height: 1.8; }
+.steps-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(11,17,23,.18); }
+.steps-list li { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(11,17,23,.18); }
+.steps-list span { color: #8f651e; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+.steps-list strong { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; font-weight: 500; }
+
+.cury-section { background: #0c1218; color: var(--paper); }
+.cury-grid { display: grid; grid-template-columns: .55fr 1.45fr; gap: 90px; align-items: center; }
+.cury-number { display: grid; place-items: center; width: min(360px, 100%); aspect-ratio: 1; border: 1px solid rgba(232,199,127,.28); color: var(--gold-light); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(80px, 11vw, 150px); letter-spacing: -.08em; }
+.cury-grid p { max-width: 720px; color: rgba(245,240,231,.62); font-size: 17px; line-height: 1.82; }
+
+.testimonials-section { background: #fffdfa; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.testimonial-card { margin: 0; min-height: 310px; padding: 38px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
+.testimonial-card blockquote { margin: 0; padding: 0; border: 0; color: var(--ink); font-size: 26px; line-height: 1.42; }
+.testimonial-card figcaption { margin-top: 42px; display: grid; gap: 5px; }
+.testimonial-card figcaption strong { font-size: 12px; letter-spacing: .05em; }
+.testimonial-card figcaption span { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.amazon-note { margin: 36px auto 0; text-align: center; color: var(--muted); font-size: 13px; }
+.amazon-note a { color: #8f651e; font-weight: 700; }
+
+.faq-section { background: #f5f0e7; }
+.faq-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+.faq-list { border-top: 1px solid rgba(11,17,23,.16); }
+.faq-list details { border-bottom: 1px solid rgba(11,17,23,.16); }
+.faq-list summary { list-style: none; cursor: pointer; padding: 24px 46px 24px 0; position: relative; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; line-height: 1.3; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; position: absolute; right: 4px; top: 21px; color: #8f651e; font-family: Arial, sans-serif; font-size: 24px; font-weight: 400; }
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list details p { max-width: 760px; padding: 0 46px 24px 0; margin: 0; color: #565d63; font-size: 15px; line-height: 1.75; }
+
+.lp-closing { background: #080d12; color: var(--paper); padding: 120px 0; text-align: center; }
+.lp-closing p { max-width: 720px; margin: 30px auto 0; color: rgba(245,240,231,.62); font-size: 17px; line-height: 1.82; }
+.lp-closing blockquote { max-width: 700px; margin: 44px auto 0; padding: 0; border: 0; color: var(--gold-light); font-size: 34px; }
+.lp-closing .btn { margin-top: 42px; }
+
 @media (max-width: 900px) {
   .nav { display: none; }
-  .home-hero-grid, .featured-grid, .publish-grid, .lp-hero-grid, .two-col-copy, .author-band-grid, .section-heading { grid-template-columns: 1fr; gap: 44px; }
+  .home-hero-grid, .featured-grid, .publish-grid, .lp-hero-grid, .two-col-copy, .author-band-grid, .section-heading, .questions-grid, .practical-grid, .cury-grid, .faq-grid { grid-template-columns: 1fr; gap: 44px; }
   .home-hero-visual { display: none; }
   .books-grid, .theme-grid, .purchase-grid { grid-template-columns: 1fr 1fr; }
+  .order-band-grid { grid-template-columns: 1fr; gap: 28px; }
+  .order-band-grid .btn { justify-self: start; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .lp-cover-stage { min-height: auto; }
   .lp-cover-stage img { max-height: 500px; }
   .section, .featured-book, .publish { padding: 80px 0; }
+  .cury-number { width: 220px; }
 }
 
 @media (max-width: 620px) {
@@ -145,6 +199,11 @@ blockquote { margin: 42px 0 0; padding: 28px 0 0 28px; border-left: 3px solid va
   .actions { flex-direction: column; }
   .btn { width: 100%; }
   .books-grid, .theme-grid, .purchase-grid { grid-template-columns: 1fr; }
+  .order-band-grid .btn { width: 100%; }
+  .question-list p { font-size: 21px; }
+  .testimonial-card { padding: 28px; min-height: 260px; }
+  .testimonial-card blockquote { font-size: 22px; }
+  .lp-closing { padding: 88px 0; }
   .book-cover-wrap { min-height: 390px; }
   .featured-cover img { max-height: 460px; }
   .lp-hero { padding: 70px 0 78px; }
