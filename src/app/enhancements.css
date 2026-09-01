@@ -1,0 +1,76 @@
+.lp-format-note {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: rgba(245, 240, 231, 0.68);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+}
+
+.purchase-head > p {
+  max-width: 720px;
+  margin: 14px auto 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.mobile-buy-bar {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding-bottom: 78px;
+  }
+
+  .mobile-buy-bar {
+    position: fixed;
+    z-index: 80;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 10px 10px 16px;
+    border: 1px solid rgba(232, 199, 127, 0.26);
+    border-radius: 18px;
+    background: rgba(11, 17, 23, 0.96);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
+    color: var(--paper);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-buy-bar > div {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .mobile-buy-bar strong {
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-buy-bar span {
+    color: rgba(245, 240, 231, 0.64);
+    font-size: 0.75rem;
+  }
+
+  .mobile-buy-bar .btn {
+    min-height: 46px;
+    padding: 0 18px;
+    flex: 0 0 auto;
+  }
+
+  .lp-format-note {
+    width: 100%;
+    min-height: auto;
+    margin-top: 2px;
+  }
+}
