@@ -1,11 +1,33 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { WhatsAppLink } from '@/components/WhatsAppLink'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://editoralevi.com.br'
+const pageUrl = `${siteUrl}/a-prisao-ou-o-milhao`
 
 export const metadata: Metadata = {
   title: 'A Prisão ou o Milhão — Adilson Borges',
   description:
     'A Prisão ou o Milhão, de Adilson Borges. Uma escolha real na superação do fracasso. Prefácio de Dr. Augusto Cury.',
+  alternates: {
+    canonical: '/a-prisao-ou-o-milhao',
+  },
+  openGraph: {
+    type: 'book',
+    locale: 'pt_BR',
+    siteName: 'Editora Levi',
+    url: '/a-prisao-ou-o-milhao',
+    title: 'A Prisão ou o Milhão — Adilson Borges',
+    description:
+      'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'A Prisão ou o Milhão — Adilson Borges',
+    description:
+      'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
+  },
 }
 
 const themes = [
@@ -77,9 +99,59 @@ const faqs = [
   },
 ]
 
+const bookSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'A Prisão ou o Milhão',
+  alternateName: 'A Prisão ou o Milhão: Uma escolha real na superação do fracasso',
+  url: pageUrl,
+  isbn: '9786501430751',
+  inLanguage: 'pt-BR',
+  author: {
+    '@type': 'Person',
+    name: 'Adilson Borges',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Editora Levi',
+    url: siteUrl,
+  },
+  description:
+    'Uma história real de queda, escolhas e reconstrução, escrita por Adilson Borges e apresentada com prefácio de Dr. Augusto Cury.',
+  offers: [
+    {
+      '@type': 'Offer',
+      priceCurrency: 'BRL',
+      price: '49.90',
+      url: `${pageUrl}#comprar`,
+      itemCondition: 'https://schema.org/NewCondition',
+      name: 'Livro físico',
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'BRL',
+      price: '19.90',
+      url: `${pageUrl}#comprar`,
+      name: 'PDF',
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'BRL',
+      price: '19.90',
+      url: `${pageUrl}#comprar`,
+      name: 'EPUB',
+    },
+  ],
+}
+
 export default function BookLandingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }}
+      />
+
       <section className="lp-hero">
         <div className="shell lp-hero-grid">
           <div className="lp-cover-stage">
@@ -106,9 +178,12 @@ export default function BookLandingPage() {
                 A Prisão ou o Milhão nasceu daí. Não de uma teoria sobre superação. De uma experiência real.
               </strong>
             </p>
-            <a className="btn btn-gold" href="#comprar">
-              Escolher minha versão
-            </a>
+            <div className="actions">
+              <a className="btn btn-gold" href="#comprar">
+                Escolher minha versão
+              </a>
+              <span className="lp-format-note">Livro físico · PDF · EPUB</span>
+            </div>
           </div>
         </div>
       </section>
@@ -281,6 +356,7 @@ export default function BookLandingPage() {
           <div className="purchase-head">
             <span className="eyebrow">Escolha sua versão</span>
             <h2>Leia no formato que faz sentido para você.</h2>
+            <p>Enquanto o checkout próprio é finalizado, os pedidos podem ser concluídos diretamente com a Editora Levi pelo WhatsApp.</p>
           </div>
           <div className="purchase-grid">
             <article className="purchase-card featured">
@@ -288,27 +364,36 @@ export default function BookLandingPage() {
               <h3>A Prisão ou o Milhão</h3>
               <p className="old-price">R$ 59,90</p>
               <p className="price">R$ 49,90</p>
-              <button className="btn btn-gold" type="button" disabled>
+              <WhatsAppLink
+                className="btn btn-gold"
+                message="Olá! Quero comprar o livro físico A Prisão ou o Milhão por R$ 49,90."
+              >
                 Comprar livro físico
-              </button>
-              <small>Checkout será conectado na etapa comercial.</small>
+              </WhatsAppLink>
+              <small>Pedido direto com a Editora Levi pelo WhatsApp.</small>
             </article>
             <article className="purchase-card">
               <span className="format">PDF</span>
               <h3>Versão digital</h3>
               <p className="price">R$ 19,90</p>
-              <button className="btn btn-dark" type="button" disabled>
+              <WhatsAppLink
+                className="btn btn-dark"
+                message="Olá! Quero comprar a versão PDF de A Prisão ou o Milhão por R$ 19,90."
+              >
                 Comprar PDF
-              </button>
-              <small>Entrega individual protegida após a confirmação do pagamento.</small>
+              </WhatsAppLink>
+              <small>Pedido direto com a Editora Levi pelo WhatsApp.</small>
             </article>
             <article className="purchase-card">
               <span className="format">EPUB</span>
               <h3>Versão digital</h3>
               <p className="price">R$ 19,90</p>
-              <button className="btn btn-dark" type="button" disabled>
+              <WhatsAppLink
+                className="btn btn-dark"
+                message="Olá! Quero comprar a versão EPUB de A Prisão ou o Milhão por R$ 19,90."
+              >
                 Comprar EPUB
-              </button>
+              </WhatsAppLink>
               <small>Para leitores e aplicativos compatíveis com EPUB.</small>
             </article>
           </div>
@@ -352,6 +437,16 @@ export default function BookLandingPage() {
           </a>
         </div>
       </section>
+
+      <div className="mobile-buy-bar" aria-label="Atalho para compra">
+        <div>
+          <strong>A Prisão ou o Milhão</strong>
+          <span>A partir de R$ 19,90</span>
+        </div>
+        <a className="btn btn-gold" href="#comprar">
+          Comprar
+        </a>
+      </div>
     </>
   )
 }
