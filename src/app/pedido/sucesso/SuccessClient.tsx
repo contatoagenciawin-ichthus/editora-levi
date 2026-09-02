@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { trackEvent } from '@/lib/tracking'
 import styles from './success.module.css'
 
 type DownloadItem = {
@@ -16,6 +17,8 @@ type AccessPayload = {
   publicId?: string
   physical?: boolean
   fulfillmentStatus?: string
+  totalCents?: number
+  formats?: string[]
   downloads?: DownloadItem[]
   message?: string
   error?: string
@@ -31,6 +34,22 @@ function getDeviceId() {
   }
 
   return value
+}
+
+function trackPurchaseOnce(payload: AccessPayload) {
+  if (!payload.paid || !payload.publicId) return
+
+  const key = `editora-levi-purchase-${payload.publicId}`
+  if (window.localStorage.getItem(key)) return
+
+  trackEvent('purchase', {
+    transaction_id: payload.publicId,
+    currency: 'BRL',
+    value: Number(payload.totalCents || 0) / 100,
+    item_name: 'A Prisão ou o Milhão',
+    item_variant: payload.formats?.join(',') || (payload.physical ? 'physical' : 'digital'),
+  })
+  window.localStorage.setItem(key, '1')
 }
 
 export function SuccessClient({ sessionId }: { sessionId: string }) {
@@ -61,6 +80,7 @@ export function SuccessClient({ sessionId }: { sessionId: string }) {
 
       if (!response.ok) throw new Error(payload.error || 'Não foi possível validar o pedido.')
       setData(payload)
+      trackPurchaseOnce(payload)
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : 'Não foi possível validar o pedido.')
     } finally {
