@@ -1,8 +1,11 @@
 import { neon } from '@neondatabase/serverless'
 
-let cachedSql: ReturnType<typeof neon> | null = null
+type QueryRows = Array<Record<string, any>>
+type SqlClient = (strings: TemplateStringsArray, ...values: any[]) => Promise<QueryRows>
 
-export function getSql() {
+let cachedSql: SqlClient | null = null
+
+export function getSql(): SqlClient {
   const databaseUrl = process.env.DATABASE_URL
 
   if (!databaseUrl) {
@@ -10,7 +13,7 @@ export function getSql() {
   }
 
   if (!cachedSql) {
-    cachedSql = neon(databaseUrl)
+    cachedSql = neon(databaseUrl) as unknown as SqlClient
   }
 
   return cachedSql
