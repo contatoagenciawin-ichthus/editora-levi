@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
     const sql = getSql()
     const orders = await sql`
-      SELECT id, public_id, status, fulfillment_status
+      SELECT id, public_id, status, fulfillment_status, total_cents
       FROM orders
       WHERE id = ${orderId} AND stripe_checkout_session_id = ${sessionId}
       LIMIT 1
@@ -61,6 +61,7 @@ export async function POST(request: Request) {
     `
     const formats = itemRows.map((item) => String(item.format))
     const physical = formats.includes('physical')
+    const totalCents = Number(order.total_cents || 0)
 
     if (physical) {
       return NextResponse.json({
@@ -69,6 +70,8 @@ export async function POST(request: Request) {
         publicId: order.public_id,
         physical: true,
         fulfillmentStatus: order.fulfillment_status,
+        totalCents,
+        formats,
         downloads: [],
       })
     }
@@ -164,6 +167,8 @@ export async function POST(request: Request) {
       paid: true,
       publicId: order.public_id,
       physical: false,
+      totalCents,
+      formats,
       downloads,
     })
   } catch (error) {
