@@ -3,6 +3,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import './globals.css'
 import './enhancements.css'
+import './official-assets.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://editoralevi.com.br'
 
