@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { formatBRL, offers, type ProductFormat } from '@/lib/catalog'
+import { trackEvent } from '@/lib/tracking'
 import styles from './checkout.module.css'
 
 type ShippingQuote = {
@@ -103,6 +104,13 @@ export function CheckoutClient({ initialFormat, cancelled }: Props) {
       if (format === 'physical' && !selectedQuoteId) {
         throw new Error('Calcule e selecione uma opção de frete antes de continuar.')
       }
+
+      trackEvent('begin_checkout', {
+        currency: 'BRL',
+        value: total / 100,
+        item_name: 'A Prisão ou o Milhão',
+        item_variant: format,
+      })
 
       const response = await fetch('/api/checkout', {
         method: 'POST',
