@@ -1,0 +1,201 @@
+.page {
+  min-height: 100vh;
+  background: #0f171f;
+  color: #f6f0e6;
+  padding: 56px 20px 90px;
+}
+
+.shell {
+  width: min(880px, 100%);
+  margin: 0 auto;
+}
+
+.brand {
+  display: inline-block;
+  margin-bottom: 46px;
+  color: #e6c77f;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.card {
+  padding: clamp(34px, 7vw, 72px);
+  border: 1px solid rgba(230, 199, 127, 0.2);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(200, 155, 72, 0.13), transparent 38%),
+    #131c25;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
+}
+
+.eyebrow {
+  color: #e4c782;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  max-width: 700px;
+  margin: 14px 0 22px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.card > p {
+  max-width: 700px;
+  color: rgba(246, 240, 230, 0.66);
+  line-height: 1.8;
+}
+
+.card > p strong {
+  color: #f6f0e6;
+}
+
+.orderCode {
+  margin: 34px 0;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.orderCode span {
+  color: rgba(246, 240, 230, 0.5);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.orderCode strong {
+  color: #e4c782;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
+.downloads {
+  display: grid;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.downloads > a {
+  min-height: 96px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(230, 199, 127, 0.2);
+  color: #f6f0e6;
+  text-decoration: none;
+  transition: 160ms ease;
+}
+
+.downloads > a:hover {
+  border-color: #c9953d;
+  background: rgba(201, 149, 61, 0.07);
+  transform: translateY(-1px);
+}
+
+.downloads > a div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.downloads > a span {
+  color: rgba(246, 240, 230, 0.48);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.downloads > a strong {
+  color: #e4c782;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.downloads > a small {
+  max-width: 230px;
+  color: rgba(246, 240, 230, 0.48);
+  text-align: right;
+  line-height: 1.5;
+}
+
+.empty {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(246, 240, 230, 0.6);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.actions a,
+.actions button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 1px solid rgba(230, 199, 127, 0.24);
+  background: transparent;
+  color: #e4c782;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.actions button:first-child,
+.actions a:first-child {
+  background: #c9953d;
+  color: #111820;
+  border-color: #c9953d;
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 28px 12px 70px;
+  }
+
+  .brand {
+    margin-bottom: 24px;
+  }
+
+  .card {
+    padding: 30px 22px;
+  }
+
+  .orderCode {
+    flex-direction: column;
+  }
+
+  .downloads > a {
+    grid-template-columns: 1fr;
+  }
+
+  .downloads > a small {
+    max-width: none;
+    text-align: left;
+  }
+
+  .actions {
+    display: grid;
+  }
+}
