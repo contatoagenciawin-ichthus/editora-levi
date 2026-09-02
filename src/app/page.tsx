@@ -150,8 +150,9 @@ export default function Home() {
 
       <section className="section author-home">
         <div className="shell author-home-grid">
-          <div className="author-home-photo">
-            <Image src="/brand/adilson.svg" alt="Adilson Borges" width={382} height={510} />
+          <div className="author-signature" aria-hidden="true">
+            <span>AB</span>
+            <small>Adilson Borges</small>
           </div>
           <div>
             <span className="eyebrow gold">O autor</span>
