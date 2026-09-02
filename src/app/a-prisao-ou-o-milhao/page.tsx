@@ -19,14 +19,12 @@ export const metadata: Metadata = {
     siteName: 'Editora Levi',
     url: '/a-prisao-ou-o-milhao',
     title: 'A Prisão ou o Milhão — Adilson Borges',
-    description:
-      'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
+    description: 'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
   },
   twitter: {
     card: 'summary',
     title: 'A Prisão ou o Milhão — Adilson Borges',
-    description:
-      'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
+    description: 'Uma história real de queda, escolhas e reconstrução. Prefácio de Dr. Augusto Cury.',
   },
 }
 
@@ -37,6 +35,21 @@ const themes = [
   'Paciência, sonhos, objetivos e propósito',
   'Relacionamentos e reconstrução',
   'Exercícios práticos ao longo da leitura',
+]
+
+const audiences = [
+  {
+    title: 'Quem precisa recomeçar',
+    text: 'Para quem atravessou uma crise, uma perda ou uma fase em que continuar do mesmo jeito deixou de ser uma opção.',
+  },
+  {
+    title: 'Quem empreende e decide',
+    text: 'Para empresários e empreendedores que conhecem o peso das escolhas, dos riscos e das consequências quando algo não sai como planejado.',
+  },
+  {
+    title: 'Quem está revendo o próprio caminho',
+    text: 'Para quem busca desenvolvimento pessoal, propósito e uma leitura que provoque reflexão sem vender uma fórmula pronta.',
+  },
 ]
 
 const steps = [
@@ -152,7 +165,7 @@ export default function BookLandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }}
       />
 
-      <section className="lp-hero">
+      <section className="lp-hero lp-hero-refined">
         <div className="shell lp-hero-grid">
           <div className="lp-cover-stage">
             <Image
@@ -170,13 +183,11 @@ export default function BookLandingPage() {
             <h2>Todo mundo tem uma prisão. Poucos escolhem o milhão.</h2>
             <p>
               Adilson Borges começou a escrever este livro em uma das fases mais difíceis da própria vida.
-              Havia dívidas, problemas pessoais, medo, decisões que não deram certo e a sensação de que
-              aquilo que havia construído estava desmoronando.
+              Havia dívidas, problemas pessoais, medo, decisões que não deram certo e a sensação de que aquilo
+              que havia construído estava desmoronando.
             </p>
             <p>
-              <strong>
-                A Prisão ou o Milhão nasceu daí. Não de uma teoria sobre superação. De uma experiência real.
-              </strong>
+              <strong>A Prisão ou o Milhão nasceu daí. Não de uma teoria sobre superação. De uma experiência real.</strong>
             </p>
             <div className="actions">
               <a className="btn btn-gold" href="#comprar">
@@ -184,6 +195,23 @@ export default function BookLandingPage() {
               </a>
               <span className="lp-format-note">Livro físico · PDF · EPUB</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="lp-proof-strip" aria-label="Destaques da obra">
+        <div className="shell lp-proof-grid">
+          <div>
+            <strong>História real</strong>
+            <span>queda, escolhas e reconstrução vividas pelo autor</span>
+          </div>
+          <div>
+            <strong>Prefácio de Dr. Augusto Cury</strong>
+            <span>uma chave de leitura para a provocação central da obra</span>
+          </div>
+          <div>
+            <strong>Reflexão + prática</strong>
+            <span>capítulos, exercícios e um guia final de aplicação</span>
           </div>
         </div>
       </section>
@@ -209,6 +237,27 @@ export default function BookLandingPage() {
         </div>
       </section>
 
+      <section className="section identity-section">
+        <div className="shell identity-grid">
+          <div className="identity-card identity-card-dark">
+            <span className="eyebrow gold">O que o livro é</span>
+            <h2>Uma história real usada como ponto de partida.</h2>
+            <p>
+              A trajetória de Adilson atravessa a obra, mas os capítulos avançam para escolhas, pensamentos,
+              relações, fé, inteligência emocional, propósito e responsabilidade.
+            </p>
+          </div>
+          <div className="identity-card">
+            <span className="eyebrow">O que o livro não promete</span>
+            <h2>Uma fórmula para enriquecer ou uma versão bonita do fracasso.</h2>
+            <p>
+              Dinheiro faz parte da história, mas o “milhão” do título não é uma promessa financeira. E a queda
+              não aparece como vitrine: ela é o contexto em que algumas decisões precisaram ser revistas.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section questions-section">
         <div className="shell questions-grid">
           <div>
@@ -219,6 +268,30 @@ export default function BookLandingPage() {
             <p>Por que continuo repetindo determinadas escolhas?</p>
             <p>Quanto da minha situação atual está fora do meu controle — e quanto ainda depende de mim?</p>
             <p>O que preciso mudar para não continuar chegando ao mesmo lugar?</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section audience-section">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">Para quem é esta leitura</span>
+              <h2>Você não precisa ter vivido a mesma história para reconhecer o conflito.</h2>
+            </div>
+            <p>
+              A obra conversa com diferentes momentos de vida. O ponto de contato não é repetir a trajetória do
+              autor, mas reconhecer situações em que escolhas, perdas e recomeços passaram a exigir uma resposta.
+            </p>
+          </div>
+          <div className="audience-grid">
+            {audiences.map((audience, index) => (
+              <article className="audience-card" key={audience.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{audience.title}</h3>
+                <p>{audience.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -285,11 +358,21 @@ export default function BookLandingPage() {
         </div>
       </section>
 
+      <section className="book-cta-band">
+        <div className="shell book-cta-grid">
+          <div>
+            <span className="eyebrow gold">A Prisão ou o Milhão</span>
+            <h2>Físico por R$ 49,90. PDF e EPUB por R$ 19,90 cada.</h2>
+          </div>
+          <a className="btn btn-gold" href="#comprar">
+            Ver versões disponíveis
+          </a>
+        </div>
+      </section>
+
       <section className="section cury-section">
         <div className="shell cury-grid">
-          <div className="cury-number" aria-hidden="true">
-            AC
-          </div>
+          <div className="cury-number" aria-hidden="true">AC</div>
           <div>
             <span className="eyebrow gold">Prefácio de Dr. Augusto Cury</span>
             <h2>Uma leitura que começa antes da introdução.</h2>
@@ -298,6 +381,7 @@ export default function BookLandingPage() {
               prefácio, chama atenção para pessoas que podem conquistar bens, reconhecimento e posições
               importantes e, ainda assim, continuar vivendo conflitos internos profundos.
             </p>
+            <blockquote className="cury-quote">“Procurar aquilo que o dinheiro não pode comprar talvez seja a chave que esta obra conduza.”</blockquote>
             <p>
               Sua leitura ajuda a compreender um ponto que atravessa toda a obra: prosperidade e liberdade não
               são definidas apenas por aquilo que alguém consegue acumular.
@@ -322,9 +406,7 @@ export default function BookLandingPage() {
               e um período que mudou profundamente sua maneira de enxergar sucesso, dinheiro, relacionamentos e
               propósito. A Prisão ou o Milhão nasceu dessa experiência.
             </p>
-            <Link href="/#obras" className="text-link">
-              Conhecer outras obras →
-            </Link>
+            <Link href="/#obras" className="text-link">Conhecer outras obras →</Link>
           </div>
         </div>
       </section>
@@ -356,7 +438,9 @@ export default function BookLandingPage() {
           <div className="purchase-head">
             <span className="eyebrow">Escolha sua versão</span>
             <h2>Leia no formato que faz sentido para você.</h2>
-            <p>Enquanto o checkout próprio é finalizado, os pedidos podem ser concluídos diretamente com a Editora Levi pelo WhatsApp.</p>
+            <p>
+              Enquanto o checkout próprio é finalizado, os pedidos podem ser concluídos diretamente com a Editora Levi pelo WhatsApp.
+            </p>
           </div>
           <div className="purchase-grid">
             <article className="purchase-card featured">
@@ -432,9 +516,7 @@ export default function BookLandingPage() {
             ainda não existe garantia de que tudo dará certo.
           </p>
           <blockquote>“O milhão não é um destino. É uma decisão.”</blockquote>
-          <a className="btn btn-gold" href="#comprar">
-            Escolher minha versão
-          </a>
+          <a className="btn btn-gold" href="#comprar">Escolher minha versão</a>
         </div>
       </section>
 
@@ -443,9 +525,7 @@ export default function BookLandingPage() {
           <strong>A Prisão ou o Milhão</strong>
           <span>A partir de R$ 19,90</span>
         </div>
-        <a className="btn btn-gold" href="#comprar">
-          Comprar
-        </a>
+        <a className="btn btn-gold" href="#comprar">Comprar</a>
       </div>
     </>
   )
