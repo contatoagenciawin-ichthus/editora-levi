@@ -13,7 +13,8 @@ export default function Home() {
             <span className="eyebrow gold">Editora Levi</span>
             <h1>Sua história pode virar um livro.</h1>
             <p>
-              Ideias, experiências e conhecimento ganham forma editorial, publicação e um caminho para chegar ao leitor.
+              A Editora Levi trabalha para transformar ideias, experiências e conhecimento em obras publicadas —
+              da organização do conteúdo à chegada do livro ao leitor.
             </p>
             <div className="actions">
               <WhatsAppLink
@@ -60,16 +61,16 @@ export default function Home() {
       <section className="home-proof-strip" aria-label="Editora Levi em resumo">
         <div className="shell home-proof-grid">
           <div>
-            <strong>3</strong>
-            <span>obras publicadas de Adilson Borges</span>
+            <strong>3 obras</strong>
+            <span>já publicadas de Adilson Borges</span>
           </div>
           <div>
             <strong>Ghostwriting · ISBN</strong>
-            <span>estrutura para transformar uma ideia em obra publicada</span>
+            <span>estrutura editorial para tirar uma obra do papel</span>
           </div>
           <div>
             <strong>Contato direto</strong>
-            <span>pedidos e projetos editoriais pelo WhatsApp</span>
+            <span>pedidos e novos projetos pelo WhatsApp</span>
           </div>
         </div>
       </section>
@@ -89,18 +90,40 @@ export default function Home() {
             <h2>A Prisão ou o Milhão</h2>
             <p className="lead">Todo mundo tem uma prisão. Poucos escolhem o milhão.</p>
             <p>
-              Um livro nascido em uma fase de perdas, dívidas e reconstrução. A história é real; a leitura avança
-              sobre escolhas, responsabilidade, mentalidade e a possibilidade de recomeçar sem transformar o
-              fracasso em espetáculo.
+              Adilson Borges começou a escrever quando ainda enfrentava dívidas, perdas e as consequências de
+              decisões que não deram certo. O livro nasce desse período e acompanha a tentativa de compreender
+              como pensamentos, escolhas, fé e responsabilidade participam de uma reconstrução real.
             </p>
             <div className="feature-facts" aria-label="Destaques do livro">
               <span>História real</span>
               <span>Reflexões e exercícios</span>
-              <span>Físico, PDF e EPUB</span>
+              <span>Livro físico · PDF · EPUB</span>
             </div>
             <Link className="btn btn-gold" href="/a-prisao-ou-o-milhao">
               Conhecer o livro
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section editorial-territory">
+        <div className="shell editorial-territory-grid">
+          <div>
+            <span className="eyebrow">Um autor, três conversas</span>
+            <h2>Escolhas, responsabilidade e propósito aparecem por caminhos diferentes.</h2>
+          </div>
+          <div className="territory-copy">
+            <p>
+              Em <strong>A Prisão ou o Milhão</strong>, a conversa começa no fracasso e na reconstrução.
+            </p>
+            <p>
+              Em <strong>O Poder das Escolhas</strong>, o foco está nos padrões que repetimos e nas decisões que
+              moldam relações, trabalho, fé e emoções.
+            </p>
+            <p>
+              Em <strong>Homens Não Lavam Vasilhas</strong>, a provocação se volta para presença, responsabilidade,
+              família e propósito masculino.
+            </p>
           </div>
         </div>
       </section>
@@ -113,14 +136,37 @@ export default function Home() {
               <h2>Livros de Adilson Borges</h2>
             </div>
             <p>
-              Três títulos que partem de temas diferentes e se encontram em um território comum: escolhas,
-              responsabilidade, relações e propósito.
+              Não são três versões da mesma ideia. Cada livro parte de uma pergunta diferente e abre uma conversa
+              própria com o leitor.
             </p>
           </div>
           <div className="books-grid">
             {books.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section author-home">
+        <div className="shell author-home-grid">
+          <div className="author-home-photo">
+            <Image src="/brand/adilson.svg" alt="Adilson Borges" width={382} height={510} />
+          </div>
+          <div>
+            <span className="eyebrow gold">O autor</span>
+            <h2>Adilson Borges</h2>
+            <p>
+              Bacharel em Direito, empresário, compositor e multi-instrumentista autodidata, Adilson escreve a
+              partir de experiências vividas e de temas que atravessam decisões, relações, fé, trabalho e propósito.
+            </p>
+            <p>
+              Suas obras partem de situações concretas — uma queda financeira, padrões de escolha, a presença do
+              homem na família — para provocar reflexão sem separar a ideia das consequências que ela produz na vida.
+            </p>
+            <Link className="text-link" href="/#obras">
+              Conhecer as obras →
+            </Link>
           </div>
         </div>
       </section>
