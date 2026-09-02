@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { BookCard } from '@/components/BookCard'
 import { WhatsAppLink } from '@/components/WhatsAppLink'
@@ -30,29 +29,29 @@ export default function Home() {
           </div>
 
           <div className="home-library-stage" aria-label="Obras publicadas pela Editora Levi">
-            <Image
-              src="/books/a-prisao-ou-o-milhao.svg"
+            <img
+              src={books[0].cover}
               alt="Capa de A Prisão ou o Milhão"
               width={300}
               height={450}
               className="home-book home-book-main"
-              priority
+              fetchPriority="high"
             />
-            <Image
-              src="/books/o-poder-das-escolhas.svg"
+            <img
+              src={books[1].cover}
               alt="Capa de O Poder das Escolhas"
               width={250}
               height={375}
               className="home-book home-book-left"
-              priority
+              fetchPriority="high"
             />
-            <Image
-              src="/books/homens-nao-lavam-vasilhas.svg"
+            <img
+              src={books[2].cover}
               alt="Capa de Homens Não Lavam Vasilhas"
               width={250}
               height={375}
               className="home-book home-book-right"
-              priority
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -78,11 +77,13 @@ export default function Home() {
       <section className="featured-book featured-book-home">
         <div className="shell featured-grid">
           <div className="featured-cover">
-            <Image
-              src="/books/a-prisao-ou-o-milhao.svg"
+            <img
+              src={books[0].cover}
               alt="Capa do livro A Prisão ou o Milhão"
               width={380}
               height={570}
+              loading="eager"
+              decoding="async"
             />
           </div>
           <div>
