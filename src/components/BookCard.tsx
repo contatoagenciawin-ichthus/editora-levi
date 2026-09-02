@@ -9,9 +9,10 @@ export function BookCard({ book }: { book: Book }) {
         <Image src={book.cover} alt={`Capa do livro ${book.title}`} width={360} height={540} className="book-cover" />
       </div>
       <div className="book-meta">
-        <span>{book.author}</span>
+        <span className="book-theme">{book.theme}</span>
         <h3>{book.title}</h3>
-        <p>{book.subtitle}</p>
+        <p className="book-subtitle">{book.subtitle}</p>
+        <p className="book-description">{book.description}</p>
         <strong>{book.external ? 'Ver na Amazon' : 'Conhecer a obra'} →</strong>
       </div>
     </>
