@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { TrackingScripts } from '@/components/TrackingScripts'
 import './globals.css'
 import './enhancements.css'
 import './official-assets.css'
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <TrackingScripts />
         <Header />
         <main>{children}</main>
         <Footer />
