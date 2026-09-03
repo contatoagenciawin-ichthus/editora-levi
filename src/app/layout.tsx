@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer'
 import './globals.css'
 import './enhancements.css'
 import './official-assets.css'
+import './hero-video-quality.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://editoralevi.com.br'
 
