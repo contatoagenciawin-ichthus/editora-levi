@@ -1,0 +1,47 @@
+/* Hero do livro: mantém a imagem do produto nítida e usa o vídeo apenas como camada de movimento. */
+body .book-v2-html .hero-media .hero-poster,
+body .book-v2-html .hero-media video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 66% 48% !important;
+  transform: scale(1.015) !important;
+}
+
+body .book-v2-html .hero-media .hero-poster {
+  z-index: 0 !important;
+  opacity: 1 !important;
+  filter: saturate(.94) contrast(1.09) brightness(.77) !important;
+}
+
+body .book-v2-html .hero-media video {
+  z-index: 1 !important;
+  opacity: .22 !important;
+  mix-blend-mode: screen !important;
+  filter: saturate(.95) contrast(1.12) brightness(.60) !important;
+}
+
+@media (max-width: 900px) {
+  body .book-v2-html .hero-media .hero-poster,
+  body .book-v2-html .hero-media video {
+    object-position: 61% 50% !important;
+    transform: none !important;
+  }
+
+  body .book-v2-html .hero-media .hero-poster {
+    filter: saturate(.92) contrast(1.08) brightness(.70) !important;
+  }
+
+  body .book-v2-html .hero-media video {
+    opacity: .16 !important;
+    filter: saturate(.9) contrast(1.1) brightness(.55) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .book-v2-html .hero-media video {
+    display: none !important;
+  }
+}
