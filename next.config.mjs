@@ -4,12 +4,16 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async rewrites() {
-    return [
-      {
-        source: '/a-prisao-ou-o-milhao',
-        destination: 'https://prisao-milhao.vercel.app',
-      },
-    ]
+    return {
+      beforeFiles: [
+        {
+          source: '/a-prisao-ou-o-milhao',
+          destination: 'https://prisao-milhao.vercel.app',
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    }
   },
 }
 
