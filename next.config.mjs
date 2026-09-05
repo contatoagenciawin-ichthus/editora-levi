@@ -8,7 +8,7 @@ const nextConfig = {
       beforeFiles: [
         {
           source: '/a-prisao-ou-o-milhao',
-          destination: 'https://prisao-milhao.vercel.app/?rev=20260904-mobile-approved',
+          destination: 'https://prisao-milhao.vercel.app/?rev=20260904-mobile-approved-final',
         },
       ],
       afterFiles: [],
