@@ -16,7 +16,7 @@ export const books: Book[] = [
     title: 'A Prisão ou o Milhão',
     subtitle: 'Uma escolha real na superação do fracasso',
     description:
-      'Uma história escrita no meio da queda, quando dívidas, perdas e escolhas difíceis obrigaram Adilson Borges a rever a própria vida e encontrar um caminho de reconstrução.',
+      'Uma história escrita durante a queda, quando perdas, dívidas e escolhas difíceis ainda faziam parte do presente e a reconstrução não tinha um final pronto.',
     theme: 'Queda · escolhas · reconstrução',
     author: 'Adilson Borges',
     cover: 'https://m.media-amazon.com/images/I/61aPFhnGmGL._SL1000_.jpg',
@@ -27,7 +27,7 @@ export const books: Book[] = [
     title: 'O Poder das Escolhas',
     subtitle: 'Como reprogramar sua mente; romper padrões invisíveis e mudar seu destino',
     description:
-      'Uma reflexão sobre os padrões que se repetem sem percebermos e sobre a responsabilidade de escolher com mais consciência nos relacionamentos, na fé, no trabalho e nas emoções.',
+      'Uma reflexão sobre padrões que se repetem antes mesmo de percebermos e sobre o que muda quando decisões passam a ser feitas com mais consciência.',
     theme: 'Decisão · padrões · responsabilidade',
     author: 'Adilson Borges',
     cover: 'https://m.media-amazon.com/images/I/71L77rah7bL._SL1500_.jpg',
@@ -39,7 +39,7 @@ export const books: Book[] = [
     title: 'Homens Não Lavam Vasilhas',
     subtitle: 'Um convite a um propósito muito maior',
     description:
-      'Uma provocação sobre presença, responsabilidade e o papel do homem dentro da família — sem defender um modelo autoritário ou reduzir a discussão ao título.',
+      'O título provoca, mas a conversa vai além dele: presença, responsabilidade, família e o lugar que o homem escolhe ocupar dentro dessas relações.',
     theme: 'Presença · família · propósito',
     author: 'Adilson Borges',
     cover: 'https://m.media-amazon.com/images/I/71eeUk6AHNL._SL1500_.jpg',
