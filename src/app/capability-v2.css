@@ -99,6 +99,53 @@
   line-height: 1.62;
 }
 
+/* Projeto em destaque — vídeo de fundo inspirado na hero de A Prisão ou o Milhão */
+.production-proof-video {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #080706;
+}
+
+.production-proof-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+}
+
+.production-proof-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(4, 3, 2, 0.84) 0%, rgba(4, 3, 2, 0.64) 48%, rgba(4, 3, 2, 0.76) 100%),
+    linear-gradient(180deg, rgba(4, 3, 2, 0.18) 0%, rgba(4, 3, 2, 0.5) 100%);
+  pointer-events: none;
+}
+
+.production-proof-video .production-proof-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.production-proof-video .production-proof-visual img {
+  filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.46));
+}
+
+.production-proof-video .production-proof-copy > p:not(.lead) {
+  color: rgba(243, 238, 228, 0.74);
+}
+
+.production-proof-video .feature-facts span {
+  background: rgba(5, 4, 3, 0.26);
+  backdrop-filter: blur(5px);
+}
+
 @media (max-width: 1080px) {
   .editorial-capability {
     padding: 82px 0;
@@ -179,5 +226,19 @@
   .capability-grid article p {
     max-width: none;
     font-size: 15px;
+  }
+
+  .production-proof-bg-video {
+    object-position: 56% center;
+  }
+
+  .production-proof-video-overlay {
+    background: rgba(4, 3, 2, 0.78);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .production-proof-bg-video {
+    display: none;
   }
 }
