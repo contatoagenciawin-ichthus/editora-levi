@@ -128,7 +128,7 @@ export default function Home() {
           <div className="production-proof-copy">
             <span className="eyebrow gold">Projeto em destaque</span>
             <h2>Quando o livro precisa existir também como presença.</h2>
-            <p className="lead">A Prisão ou o Milhão · Adilson Borges · Prefácio de Dr. Augusto Cury</p>
+            <p className="lead">A Prisão ou o Milhão · projeto editorial e lançamento</p>
             <p>
               O lançamento reúne conteúdo, identidade visual, edição física e versões digitais em um mesmo projeto.
               É um exemplo de como uma obra pode ser preparada para chegar ao público com unidade entre mensagem e
@@ -142,33 +142,6 @@ export default function Home() {
             <Link className="btn btn-gold" href="/a-prisao-ou-o-milhao">
               Conhecer o projeto
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section author-home">
-        <div className="shell author-home-grid">
-          <figure className="author-photo" aria-label="Adilson Borges">
-            <img
-              src="https://prisao-milhao.vercel.app/media/adilson.jpg"
-              alt="Adilson Borges"
-              width={720}
-              height={900}
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <div>
-            <span className="eyebrow gold">Autor e fundador</span>
-            <h2>Adilson Borges</h2>
-            <p>
-              Bacharel em Direito, empresário, compositor e multi-instrumentista autodidata, Adilson escreve a
-              partir de experiências vividas e de temas que atravessam decisões, relações, fé, trabalho e propósito.
-            </p>
-            <p>
-              A Editora Levi nasce também dessa experiência prática com o livro: transformar uma ideia em texto,
-              dar forma editorial ao conteúdo e conduzir uma obra até a publicação.
-            </p>
           </div>
         </div>
       </section>
@@ -198,6 +171,22 @@ export default function Home() {
             >
               Conversar sobre meu projeto
             </WhatsAppLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section editorial-capability" id="editora">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">Sobre a Editora Levi</span>
+              <h2>Uma estrutura editorial construída para acompanhar a obra inteira.</h2>
+            </div>
+            <p>
+              A Editora Levi reúne direção editorial, preparação, revisão, projeto gráfico e publicação em uma mesma
+              estrutura. Fundada por Adilson Borges, nasceu da experiência prática de conduzir livros da ideia ao
+              produto editorial final e hoje organiza esse processo para novos projetos e autores.
+            </p>
           </div>
         </div>
       </section>
