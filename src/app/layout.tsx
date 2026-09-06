@@ -8,6 +8,7 @@ import './official-assets.css'
 import './hero-video-quality.css'
 import './editorial-v2.css'
 import './typography-v2.css'
+import './capability-v2.css'
 
 const inter = Inter({
   subsets: ['latin'],
