@@ -1,12 +1,17 @@
 import Link from 'next/link'
 import type { Book } from '@/data/books'
-import { BookMockup } from '@/components/BookMockup'
 
 export function BookCard({ book }: { book: Book }) {
   const content = (
     <>
-      <div className="book-cover-wrap">
-        <BookMockup src={book.cover} alt={`Capa do livro ${book.title}`} className="catalog-mockup" />
+      <div className="book-cover-wrap catalog-uploaded-mockup-wrap">
+        <img
+          src={book.cover}
+          alt={`Mockup do livro ${book.title}`}
+          className="catalog-uploaded-mockup"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="book-meta">
         <span className="book-theme">{book.theme}</span>
