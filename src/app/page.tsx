@@ -1,53 +1,39 @@
 import Link from 'next/link'
 import { BookCard } from '@/components/BookCard'
-import { BookMockup } from '@/components/BookMockup'
 import { WhatsAppLink } from '@/components/WhatsAppLink'
 import { books } from '@/data/books'
 
 export default function Home() {
   return (
     <>
-      <section className="home-hero home-hero-refined">
-        <div className="shell home-hero-grid">
+      <section className="home-hero home-hero-refined home-hero-institutional">
+        <div className="shell home-hero-institutional-grid">
           <div className="home-hero-copy">
             <span className="eyebrow gold">Editora Levi</span>
-            <h1>Uma boa história precisa de forma para virar livro.</h1>
+            <h1>Livros com direção editorial, identidade e presença.</h1>
             <p>
-              A Editora Levi organiza, desenvolve e publica projetos para autores que têm algo consistente a dizer —
-              do material inicial à obra pronta para chegar ao leitor.
+              A Editora Levi transforma originais, ideias e experiências em obras prontas para chegar ao leitor,
+              acompanhando cada projeto da construção editorial à publicação.
             </p>
             <div className="actions">
               <WhatsAppLink
                 className="btn btn-gold"
                 message="Olá! Conheci a Editora Levi pelo site e quero conversar sobre a publicação do meu livro."
               >
-                Quero publicar meu livro
+                Apresentar meu projeto
               </WhatsAppLink>
-              <Link className="btn btn-outline-light" href="#obras">
-                Conhecer o catálogo
+              <Link className="btn btn-outline-light" href="#processo">
+                Conhecer a editora
               </Link>
             </div>
           </div>
 
-          <div className="home-library-stage" aria-label="Obras publicadas pela Editora Levi">
-            <BookMockup
-              src={books[0].cover}
-              alt="A Prisão ou o Milhão"
-              className="home-mockup home-mockup-main"
-              priority
-            />
-            <BookMockup
-              src={books[1].cover}
-              alt="O Poder das Escolhas"
-              className="home-mockup home-mockup-left"
-              priority
-            />
-            <BookMockup
-              src={books[2].cover}
-              alt="Homens Não Lavam Vasilhas"
-              className="home-mockup home-mockup-right"
-              priority
-            />
+          <div className="home-hero-statement" aria-label="Atuação editorial da Editora Levi">
+            <span>Do original ao livro publicado</span>
+            <p>
+              Direção editorial, preparação, revisão, projeto gráfico, publicação e acompanhamento em uma mesma
+              estrutura.
+            </p>
           </div>
         </div>
       </section>
@@ -55,87 +41,71 @@ export default function Home() {
       <section className="home-proof-strip" aria-label="Editora Levi em resumo">
         <div className="shell home-proof-grid">
           <div>
-            <strong>3 obras publicadas</strong>
-            <span>o catálogo começa com os livros de Adilson Borges</span>
+            <strong>Obras publicadas</strong>
+            <span>projetos que já saíram do original e chegaram ao leitor</span>
           </div>
           <div>
-            <strong>Texto · edição · publicação</strong>
-            <span>estrutura editorial para transformar material em obra</span>
+            <strong>Estrutura editorial</strong>
+            <span>texto, preparação, revisão, projeto gráfico, ISBN e publicação</span>
           </div>
           <div>
-            <strong>Projeto por projeto</strong>
-            <span>atendimento direto e decisões construídas com o autor</span>
+            <strong>Acompanhamento direto</strong>
+            <span>cada projeto começa por uma conversa sobre obra, estágio e objetivo</span>
           </div>
         </div>
       </section>
 
-      <section className="featured-book featured-book-home">
-        <div className="shell featured-grid">
-          <div className="featured-cover">
-            <BookMockup
-              src={books[0].cover}
-              alt="Capa do livro A Prisão ou o Milhão"
-              className="featured-mockup"
-              priority
-            />
-          </div>
-          <div>
-            <span className="eyebrow gold">Obra em destaque · Prefácio de Dr. Augusto Cury</span>
-            <h2>A Prisão ou o Milhão</h2>
-            <p className="lead">Um livro escrito no meio da crise, não depois dela.</p>
-            <p>
-              Adilson Borges começou a escrever enquanto ainda tentava reconstruir a própria vida. Não havia um
-              final pronto para transformar em lição. Havia consequências reais, escolhas que precisavam ser
-              encaradas e uma pergunta difícil de ignorar: o que ainda depende de mim a partir daqui?
-            </p>
-            <div className="feature-facts" aria-label="Destaques do livro">
-              <span>História real</span>
-              <span>Reflexões e exercícios</span>
-              <span>Livro físico · PDF · EPUB</span>
-            </div>
-            <Link className="btn btn-gold" href="/a-prisao-ou-o-milhao">
-              Conhecer o livro
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section editorial-territory">
-        <div className="shell editorial-territory-grid">
-          <div>
-            <span className="eyebrow">Três livros, três pontos de partida</span>
-            <h2>O catálogo não repete a mesma conversa.</h2>
-          </div>
-          <div className="territory-copy">
-            <p>
-              <strong>A Prisão ou o Milhão</strong> começa na queda e acompanha escolhas, consequências e
-              reconstrução.
-            </p>
-            <p>
-              <strong>O Poder das Escolhas</strong> olha para padrões que se repetem e para a responsabilidade por
-              decisões que moldam relações, trabalho, fé e emoções.
-            </p>
-            <p>
-              <strong>Homens Não Lavam Vasilhas</strong> parte de uma provocação para discutir presença,
-              responsabilidade, família e propósito masculino.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section catalog-section" id="obras">
+      <section className="section editorial-capability" id="processo">
         <div className="shell">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">Catálogo</span>
-              <h2>Livros de Adilson Borges</h2>
+              <span className="eyebrow">Capacidade editorial</span>
+              <h2>Publicar não é apenas colocar um arquivo à venda.</h2>
             </div>
             <p>
-              Cada obra nasce de uma pergunta diferente. O ponto em comum é a tentativa de olhar para escolhas e
-              consequências sem transformar experiência em fórmula pronta.
+              Uma obra precisa de coerência entre conteúdo, linguagem, projeto gráfico, acabamento e forma de
+              chegar ao público. É nesse conjunto que a Editora Levi trabalha.
             </p>
           </div>
-          <div className="books-grid">
+
+          <div className="capability-grid">
+            <article>
+              <span>01</span>
+              <h3>Construção editorial</h3>
+              <p>Organização do original, desenvolvimento do texto e ghostwriting quando o projeto exige.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Preparação da obra</h3>
+              <p>Revisão, estrutura, diagramação e decisões gráficas que transformam conteúdo em livro.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Publicação</h3>
+              <p>ISBN, arquivos finais e preparação dos formatos necessários para a obra circular.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Presença e entrega</h3>
+              <p>Um projeto pensado para existir como produto editorial, não apenas como documento finalizado.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section works-proof" id="obras">
+        <div className="shell">
+          <div className="section-heading works-proof-heading">
+            <div>
+              <span className="eyebrow">Obras publicadas</span>
+              <h2>O catálogo é parte da nossa apresentação.</h2>
+            </div>
+            <p>
+              Capas, formatos e propostas diferentes, conduzidos até se tornarem obras publicadas. Os livros abaixo
+              mostram o trabalho concluído, não uma promessa de serviço.
+            </p>
+          </div>
+          <div className="books-grid books-grid-mockups">
             {books.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
@@ -143,31 +113,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section author-home">
-        <div className="shell author-home-grid">
-          <figure className="author-portrait-card">
+      <section className="featured-book featured-book-home production-proof">
+        <div className="shell production-proof-grid">
+          <figure className="production-proof-visual">
             <img
-              src="https://prisao-milhao.vercel.app/media/adilson.jpg"
-              alt="Adilson Borges"
+              src="/media/prisao-ambientado.webp"
+              alt="A Prisão ou o Milhão em composição editorial com exemplares físicos"
+              width={720}
+              height={1081}
               loading="lazy"
               decoding="async"
             />
-            <figcaption>Adilson Borges</figcaption>
+          </figure>
+          <div className="production-proof-copy">
+            <span className="eyebrow gold">Projeto em destaque</span>
+            <h2>Quando o livro precisa existir também como presença.</h2>
+            <p className="lead">A Prisão ou o Milhão · Adilson Borges · Prefácio de Dr. Augusto Cury</p>
+            <p>
+              O lançamento reúne conteúdo, identidade visual, edição física e versões digitais em um mesmo projeto.
+              É um exemplo de como uma obra pode ser preparada para chegar ao público com unidade entre mensagem e
+              apresentação.
+            </p>
+            <div className="feature-facts" aria-label="Entregas do projeto">
+              <span>Livro físico</span>
+              <span>PDF e EPUB</span>
+              <span>Landing própria</span>
+            </div>
+            <Link className="btn btn-gold" href="/a-prisao-ou-o-milhao">
+              Conhecer o projeto
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section author-home">
+        <div className="shell author-home-grid">
+          <figure className="author-photo" aria-label="Adilson Borges">
+            <img
+              src="https://prisao-milhao.vercel.app/media/adilson.jpg"
+              alt="Adilson Borges"
+              width={720}
+              height={900}
+              loading="lazy"
+              decoding="async"
+            />
           </figure>
           <div>
-            <span className="eyebrow gold">O autor</span>
+            <span className="eyebrow gold">Autor e fundador</span>
             <h2>Adilson Borges</h2>
             <p>
-              Bacharel em Direito, empresário, compositor e multi-instrumentista autodidata, Adilson escreve a partir
-              de experiências que atravessam escolhas, fé, trabalho, família e responsabilidade.
+              Bacharel em Direito, empresário, compositor e multi-instrumentista autodidata, Adilson escreve a
+              partir de experiências vividas e de temas que atravessam decisões, relações, fé, trabalho e propósito.
             </p>
             <p>
-              Seus três livros partem de situações diferentes — uma queda financeira, padrões de decisão e a presença
-              do homem na família — sem separar as ideias das consequências que elas produzem na vida.
+              A Editora Levi nasce também dessa experiência prática com o livro: transformar uma ideia em texto,
+              dar forma editorial ao conteúdo e conduzir uma obra até a publicação.
             </p>
-            <Link className="text-link" href="/#obras">
-              Conhecer o catálogo →
-            </Link>
           </div>
         </div>
       </section>
@@ -176,25 +177,26 @@ export default function Home() {
         <div className="shell publish-grid">
           <div>
             <span className="eyebrow gold">Publique com a Editora Levi</span>
-            <h2>Seu livro não precisa chegar pronto. Precisa começar com clareza.</h2>
+            <h2>O ponto de partida é entender o livro que você quer colocar no mundo.</h2>
           </div>
           <div>
             <p>
-              Alguns autores chegam com um manuscrito. Outros com anotações, gravações, uma história ou uma ideia
-              ainda pela metade. Nosso trabalho começa entendendo em que ponto o projeto está e definindo o caminho
-              editorial até a publicação.
+              Alguns autores chegam com um manuscrito pronto. Outros têm capítulos, anotações ou apenas a história
+              que desejam contar. A conversa inicial serve para identificar o estágio do projeto e o trabalho
+              editorial necessário.
             </p>
             <div className="service-list">
-              <span>Estrutura editorial</span>
               <span>Ghostwriting</span>
+              <span>Preparação e revisão</span>
+              <span>Projeto gráfico</span>
               <span>ISBN</span>
-              <span>Publicação profissional</span>
+              <span>Publicação</span>
             </div>
             <WhatsAppLink
               className="btn btn-gold"
-              message="Olá! Vi o trabalho da Editora Levi e quero entender como funciona para publicar meu livro."
+              message="Olá! Vi o trabalho da Editora Levi e quero conversar sobre o meu projeto de livro."
             >
-              Falar sobre meu livro
+              Conversar sobre meu projeto
             </WhatsAppLink>
           </div>
         </div>
@@ -203,18 +205,18 @@ export default function Home() {
       <section className="order-band order-band-refined">
         <div className="shell order-band-grid">
           <div>
-            <span className="eyebrow gold">Catálogo e novos projetos</span>
-            <h2>Quer conhecer um livro ou conversar sobre o seu?</h2>
+            <span className="eyebrow gold">Editora Levi</span>
+            <h2>Tem um original, uma ideia ou uma história para publicar?</h2>
             <p>
-              As obras disponíveis têm seus caminhos de compra no catálogo. Para projetos editoriais, o contato é
-              direto pelo WhatsApp.
+              Conte em poucas palavras o que você já tem e em que ponto está. A partir daí conseguimos indicar o
+              próximo passo editorial.
             </p>
           </div>
           <WhatsAppLink
             className="btn btn-gold"
-            message="Olá! Conheci a Editora Levi pelo site e quero falar sobre um projeto editorial."
+            message="Olá! Quero apresentar um projeto de livro para a Editora Levi."
           >
-            Conversar com a Editora Levi
+            Falar com a Editora Levi
           </WhatsAppLink>
         </div>
       </section>
