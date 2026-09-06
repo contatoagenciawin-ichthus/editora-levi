@@ -28,7 +28,7 @@ export const offers: Record<ProductFormat, ProductOffer> = {
     shortName: 'PDF',
     unitAmount: 1990,
     digital: true,
-    fileObjectKey: 'digital/a-prisao-ou-o-milhao.pdf',
+    fileObjectKey: 'a-prisao-ou-o-milhao/1ed-2026/a-Prisao-ou-o-Milhao-Adilson-Borges.pdf',
   },
   epub: {
     format: 'epub',
@@ -36,7 +36,7 @@ export const offers: Record<ProductFormat, ProductOffer> = {
     shortName: 'EPUB',
     unitAmount: 1990,
     digital: true,
-    fileObjectKey: 'digital/a-prisao-ou-o-milhao.epub',
+    fileObjectKey: 'a-prisao-ou-o-milhao/1ed-2026/a-Prisao-ou-o-Milhao-Adilson-Borges.epub',
   },
 }
 
