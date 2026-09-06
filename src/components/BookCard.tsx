@@ -1,19 +1,12 @@
 import Link from 'next/link'
 import type { Book } from '@/data/books'
+import { BookMockup } from '@/components/BookMockup'
 
 export function BookCard({ book }: { book: Book }) {
   const content = (
     <>
       <div className="book-cover-wrap">
-        <img
-          src={book.cover}
-          alt={`Capa do livro ${book.title}`}
-          width={360}
-          height={540}
-          className="book-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <BookMockup src={book.cover} alt={`Capa do livro ${book.title}`} className="catalog-mockup" />
       </div>
       <div className="book-meta">
         <span className="book-theme">{book.theme}</span>
@@ -26,8 +19,16 @@ export function BookCard({ book }: { book: Book }) {
   )
 
   if (book.external) {
-    return <a className="book-card" href={book.href} target="_blank" rel="noopener noreferrer">{content}</a>
+    return (
+      <a className="book-card" href={book.href} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    )
   }
 
-  return <Link className="book-card" href={book.href}>{content}</Link>
+  return (
+    <Link className="book-card" href={book.href}>
+      {content}
+    </Link>
+  )
 }
