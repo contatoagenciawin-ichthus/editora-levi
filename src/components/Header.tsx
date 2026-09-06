@@ -15,7 +15,7 @@ export function Header() {
         <nav className="nav" aria-label="Navegação principal">
           <Link href="/#obras">Catálogo</Link>
           <Link href="/#publique">Publique seu livro</Link>
-          <Link href="/a-prisao-ou-o-milhao">A Prisão ou o Milhão</Link>
+          <Link href="/#editora">A Editora</Link>
         </nav>
       </div>
     </header>
