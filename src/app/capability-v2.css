@@ -182,6 +182,10 @@
 }
 
 @media (max-width: 760px) {
+  body:has(.home-hero-institutional) {
+    padding-bottom: 0;
+  }
+
   .editorial-capability {
     padding: 68px 0 72px;
   }
