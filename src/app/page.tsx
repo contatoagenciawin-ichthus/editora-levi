@@ -140,7 +140,11 @@ export default function Home() {
           </figure>
           <div className="production-proof-copy">
             <span className="eyebrow gold">Projeto em destaque</span>
-            <h2>Quando o livro precisa existir também como presença.</h2>
+            <h2>
+              Quando o livro precisa existir
+              <br />
+              também como presença.
+            </h2>
             <p className="lead">A Prisão ou o Milhão · projeto editorial e lançamento</p>
             <p>
               O lançamento reúne conteúdo, identidade visual, edição física e versões digitais em um mesmo projeto.
@@ -150,7 +154,6 @@ export default function Home() {
             <div className="feature-facts" aria-label="Entregas do projeto">
               <span>Livro físico</span>
               <span>PDF e EPUB</span>
-              <span>Landing própria</span>
             </div>
             <Link className="btn btn-gold" href="/a-prisao-ou-o-milhao">
               Conhecer o projeto
