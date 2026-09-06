@@ -113,7 +113,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="featured-book featured-book-home production-proof">
+      <section className="featured-book featured-book-home production-proof production-proof-video">
+        <video
+          className="production-proof-bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="/books/Requesting_video_correction_for_%E2%80%A6_202609041039.mp4" type="video/mp4" />
+        </video>
+        <div className="production-proof-video-overlay" aria-hidden="true" />
+
         <div className="shell production-proof-grid">
           <figure className="production-proof-visual">
             <img
