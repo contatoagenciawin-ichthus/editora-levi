@@ -11,6 +11,16 @@ export function BookCard({ book }: { book: Book }) {
           className="catalog-uploaded-mockup"
           loading="lazy"
           decoding="async"
+          style={{
+            display: 'block',
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            objectPosition: 'center',
+            filter: 'none',
+            transform: 'none',
+            boxShadow: 'none',
+          }}
         />
       </div>
       <div className="book-meta">
