@@ -9,11 +9,11 @@ export function Header() {
           <Image src="/brand/logo.svg" alt="" width={54} height={54} className="brand-mark" priority />
           <div>
             <strong>Editora Levi</strong>
-            <span>Livros, autores e publicação</span>
+            <span>Livros com direção editorial</span>
           </div>
         </Link>
         <nav className="nav" aria-label="Navegação principal">
-          <Link href="/#obras">Obras</Link>
+          <Link href="/#obras">Catálogo</Link>
           <Link href="/#publique">Publique seu livro</Link>
           <Link href="/a-prisao-ou-o-milhao">A Prisão ou o Milhão</Link>
         </nav>
